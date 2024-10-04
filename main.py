@@ -1,9 +1,12 @@
+import assets
+from util import clear
 from random import choice
 
 CHOICES = ['left', 'right']
 
 
 def main():
+    print(assets.LOGO)
     print('''
 You enter the Tomb of King Ramses in search of the ancient tome that
 will reverse the curse that is ravaging the island. After traversing the various
@@ -13,8 +16,10 @@ Choose a path and let the fates decide.
 
     player = input('Go \'left\' or \'right\': ')
     hallway = choice(CHOICES)
+    clear()
 
     if player == hallway:
+        print(assets.HALLWAY)
         print(f'''
 You continue down the {hallway} hallway. Eventually, you end up in an underground
 chapel with two statues of King Ramses. As you enter, the statues eyes light up
@@ -25,14 +30,17 @@ fates decide.
 
         player = input('Press the \'left\' or \'right\': ')
         button = choice(CHOICES)
+        clear()
 
         if player == button:
+            print(assets.CHURCH)
             print(f'''
 You press the {button} button. The statues slide open to reveal a hidden chamber.
 The ancient tome sits on the pedestal. You take the tome but now you must
 fight your way out of the Tomb. TO BE CONTINUED...
 ''')
         else:
+            print(assets.DEATH)
             print('''
 The entrance shuts behind you and the statues laugh as a
 mysterious gas enters the chamber. You realize that this
@@ -40,8 +48,11 @@ gas is poisonous. You struggle to breath and eventually
 pass out and die. GAME OVER!
 ''')
     else:
+        print(assets.DEATH)
         print('''
-You continue down the path but you trip over rock and accidently set off trap. The floor opens up under you, revealing a spike pit. You fall to your death. GAME OVER!
+You continue down the path but you trip over rock and accidently
+set off trap. The floor opens up under you, revealing a spike pit.
+You fall to your death. GAME OVER!
 ''')
 
 
